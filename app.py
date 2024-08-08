@@ -12,7 +12,7 @@ This app will predict rainfall in Australia.
 st.sidebar.header('User Input')
 
 def main():
-    image = Image.open('D:/luminar/ML project/pic.jpg')
+    image = Image.open('pic.jpg')
     st.image(image, width=500)
     
     st.write("""
@@ -21,8 +21,8 @@ def main():
     You can input the weather conditions such as temperature, wind speed, humidity, and more, and the app will provide a prediction.
     """)
     
-    model = pickle.load(open('D:/luminar/ML project/model.pkl', 'rb'))
-    scaler = pickle.load(open('D:/luminar/ML project/scaler.pkl', 'rb'))
+    model = pickle.load(open('model.pkl', 'rb'))
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
     
     wd = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
     
