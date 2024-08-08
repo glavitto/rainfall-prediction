@@ -16,8 +16,8 @@ def main():
     st.image(image, width=500)
     
     
-    model = pickle.load(open(model.pkl, 'rb'))
-    scaler = pickle.load(open(scaler.pkl, 'rb'))
+    model = pickle.load(open('model.pkl', 'rb'))
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
     
     wd = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
     
@@ -57,6 +57,5 @@ def main():
         else:
             st.write('Rainy day ahead')
 
-if __name__ == '__main__':
-    main()
 
+main()
