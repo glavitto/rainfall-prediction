@@ -3,6 +3,9 @@ import pickle
 from PIL import Image
 import pandas as pd
 
+model = pickle.load('model.pkl', 'rb')
+scaler = pickle.load('scaler.pkl', 'rb')
+
 st.write("""
 # RAINFALL PREDICTION APP
 
@@ -14,10 +17,6 @@ st.sidebar.header('User Input')
 def main():
     image = Image.open('pic.jpg')
     st.image(image, width=500)
-    
-    
-    model = pickle.load('model.pkl', 'rb')
-    scaler = pickle.load('scaler.pkl', 'rb')
     
     wd = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
     
