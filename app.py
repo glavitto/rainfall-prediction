@@ -13,7 +13,7 @@ st.sidebar.header('User Input')
 def main():
     # Load image
     try:
-        image = Image.open(r'D:\luminar\rainfall prediction\pic.jpg')
+        image = Image.open('pic.jpg')
         st.image(image, width=500)
     except FileNotFoundError:
         st.error("Image file not found. Please check the file path.")
@@ -21,8 +21,8 @@ def main():
     
     # Load model and scaler
     try:
-        model = pickle.load(open(r'D:\luminar\rainfall prediction\model.pkl', 'rb'))
-        scaler = pickle.load(open(r'D:\luminar\rainfall prediction\scaler.pkl', 'rb'))
+        model = pickle.load(open('model.pkl', 'rb'))
+        scaler = pickle.load(open('scaler.pkl', 'rb'))
     except FileNotFoundError as e:
         st.error(f"File not found: {e}")
         return
