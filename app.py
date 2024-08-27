@@ -12,23 +12,14 @@ st.sidebar.header('User Input')
 
 def main():
     # Load image
-    try:
-        image = Image.open(r'D:\luminar\rainfall prediction\pic.jpg')
-        st.image(image, width=500)
-    except FileNotFoundError:
-        st.error("Image file not found. Please check the file path.")
-        return
+    image = Image.open(r'D:\luminar\rainfall prediction\pic.jpg')
+    st.image(image, width=500)
+    
     
     # Load model and scaler
-    try:
-        model = pickle.load(open(r'D:\luminar\rainfall prediction\model.pkl', 'rb'))
-        scaler = pickle.load(open(r'D:\luminar\rainfall prediction\scaler.pkl', 'rb'))
-    except FileNotFoundError as e:
-        st.error(f"File not found: {e}")
-        return
-    except Exception as e:
-        st.error(f"Error loading model or scaler: {e}")
-        return
+    model = pickle.load(open(r'D:\luminar\rainfall prediction\model.pkl', 'rb'))
+    scaler = pickle.load(open(r'D:\luminar\rainfall prediction\scaler.pkl', 'rb'))
+    
     
     # Define options
     wd = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
