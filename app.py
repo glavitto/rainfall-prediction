@@ -12,13 +12,13 @@ st.sidebar.header('User Input')
 
 def main():
     # Load image
-    image = Image.open(r'D:\luminar\rainfall prediction\pic.jpg')
+    image = Image.open(r'D:\GitHub\rainfall-prediction\pic.jpg')
     st.image(image, width=500)
     
     
     # Load model and scaler
-    model = pickle.load(open(r'D:\luminar\rainfall prediction\model.pkl', 'rb'))
-    scaler = pickle.load(open(r'D:\luminar\rainfall prediction\scaler.pkl', 'rb'))
+    model = pickle.load(open(r'D:\GitHub\rainfall-prediction\model.pkl', 'rb'))
+    scaler = pickle.load(open(r'D:\GitHub\rainfall-prediction\scaler.pkl', 'rb'))
     
     
     # Define options
