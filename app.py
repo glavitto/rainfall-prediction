@@ -11,13 +11,15 @@ This app will predict rainfall in Australia.
 st.sidebar.header('User Input')
 
 def main():
-# Load image
-image = Image.open('pic.jpg')
-st.image(image, width=500)
+    #load image
     
-# Load model and scaler
-model = pickle.load(open('model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+    image = Image.open('pic.jpg')
+    st.image(image, width=500)
+
+    #load model and scaler
+
+    model = pickle.load(open('model.pkl', 'rb'))
+    scaler = pickle.load(open('scaler.pkl', 'rb'))
     
     # Define options
     wd = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"]
